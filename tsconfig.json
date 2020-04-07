@@ -19,7 +19,6 @@
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
-      "@api/*": ["src/api/*"],
       "@type/*": ["src/type/*"],
       "@util/*": ["src/util/*"],
       "@hooks/*": ["src/hooks/*"],
@@ -27,7 +26,8 @@
       "@screens/*": ["src/screens/*"],
       "@routes": ["src/Routes/index.ts"],
       "@routes/types": ["src/Routes/types.ts"],
-      "@styles": ["src/constant/styles.ts"],
+      "@styles": ["src/styles/index.ts"],
+      "@styleTypes": ["src/styles/styleTypes.ts"],
       "@constant": ["src/constant/index.ts"],
       "@components": ["src/components/index.ts"]
     }
