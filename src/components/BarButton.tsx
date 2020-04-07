@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -8,8 +7,9 @@ import {
   TextStyle,
   ViewStyle,
 } from 'react-native';
-import { typo } from '@styles';
+import React, { ReactNode } from 'react';
 import { TypoTypes } from '@styleTypes';
+import { typo } from '@styles';
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string;

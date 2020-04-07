@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react';
 import {
   Text as RNText,
   TextProps as RNTextProps,
@@ -6,6 +5,7 @@ import {
   StyleProp,
   TextStyle,
 } from 'react-native';
+import React, { ReactNode } from 'react';
 import { typo, TypoTypes } from '@styles';
 
 interface TextProps extends RNTextProps {

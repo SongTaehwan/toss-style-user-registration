@@ -1,4 +1,4 @@
-import { pallette } from './color';
+import { pallette } from './colors';
 import { TypoTypes, BasicTypo } from './styleTypes';
 import { TextStyle } from 'react-native';
 
