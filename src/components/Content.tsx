@@ -1,13 +1,8 @@
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
+import { ContentProps } from './types';
 import { layout } from '@styles';
-
-interface ContentProps {
-  children: React.ReactNode;
-  containerStyle?: StyleProp<ViewStyle>;
-  contentContainerStyle?: StyleProp<ViewStyle>;
-}
 
 const styles = StyleSheet.create({
   wrapper: layout.container,

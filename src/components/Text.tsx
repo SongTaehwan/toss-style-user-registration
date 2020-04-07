@@ -1,27 +1,8 @@
-import {
-  Text as RNText,
-  TextProps as RNTextProps,
-  StyleSheet,
-  StyleProp,
-  TextStyle,
-} from 'react-native';
-import React, { ReactNode } from 'react';
+import { Text as RNText, StyleSheet } from 'react-native';
+import React from 'react';
 import { typo } from '@styles';
 import { TypoConst } from '@styles/types';
-
-interface TextProps extends RNTextProps {
-  children?: ReactNode;
-  content?: string;
-  style?: StyleProp<TextStyle>;
-  title?: boolean;
-  subTitle?: boolean;
-  large?: boolean;
-  normal?: boolean;
-  center?: boolean;
-  right?: boolean;
-  left?: boolean;
-  color?: string;
-}
+import { TextProps } from './types';
 
 const styles = StyleSheet.create({
   defaultFontStyle: typo.getTextStyle(),

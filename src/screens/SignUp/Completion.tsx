@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, BackHandler } from 'react-native';
 import { ContentContainer, Content, BarButton, Hero, Text } from '@components';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
 import { colors } from '@styles';

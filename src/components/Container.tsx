@@ -1,16 +1,8 @@
-import {
-  SafeAreaView,
-  SafeAreaViewProps,
-} from 'react-native-safe-area-context';
-import { StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 import React from 'react';
 import { layout } from '@styles';
-
-interface ContainerProps extends SafeAreaViewProps {
-  topless?: boolean;
-  bottomless?: boolean;
-  style?: StyleProp<ViewStyle>;
-}
+import { ContainerProps } from './types';
 
 const Container = ({
   topless = false,

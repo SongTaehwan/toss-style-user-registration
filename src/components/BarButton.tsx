@@ -1,26 +1,8 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleProp,
-  StyleSheet,
-  TouchableOpacityProps,
-  TextStyle,
-  ViewStyle,
-} from 'react-native';
-import React, { ReactNode } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react';
 import { TypoConst, FontWeightConst } from '@styles/types';
 import { typo, colors } from '@styles';
-
-interface ButtonProps extends TouchableOpacityProps {
-  title: string;
-  children?: ReactNode;
-  containerStyle?: StyleProp<ViewStyle>;
-  titleStyle?: StyleProp<TextStyle>;
-  buttonStyle?: StyleProp<ViewStyle>;
-  disabled?: boolean;
-  square?: boolean;
-}
+import { ButtonProps } from './types';
 
 const styles = StyleSheet.create({
   defaultContainerStyle: {

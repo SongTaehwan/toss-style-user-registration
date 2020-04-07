@@ -1,15 +1,8 @@
-import { TouchableOpacityProps, StyleProp, TextStyle } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/AntDesign';
 import React from 'react';
 import { colors } from '@styles';
-
-interface IconButtonProps extends TouchableOpacityProps {
-  icon: string;
-  size?: number;
-  color?: string;
-  iconStyle?: StyleProp<TextStyle>;
-}
+import { IconButtonProps } from './types';
 
 const IconButton = ({
   icon,

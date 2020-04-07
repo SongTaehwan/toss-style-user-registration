@@ -1,20 +1,9 @@
-import React, { ReactNode } from 'react';
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacityProps,
-  TextStyle,
-  StyleProp,
-} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text, StyleSheet } from 'react-native';
+import React from 'react';
 import { TypoConst } from '@styles/types';
+import { TextButtonProps } from './types';
 import { typo } from '@styles';
-
-interface TextButtonProps extends TouchableOpacityProps {
-  text: string;
-  textStyle?: StyleProp<TextStyle>;
-  children: ReactNode;
-}
 
 const styles = StyleSheet.create({
   textStyle: {

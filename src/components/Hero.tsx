@@ -1,20 +1,7 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-  TextStyle,
-} from 'react-native';
-import React, { ReactNode } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { HeroProps } from './types';
 import { typo } from '@styles';
-
-interface HeroProps {
-  containerStyle?: StyleProp<ViewStyle>;
-  contentTextStyle?: StyleProp<TextStyle>;
-  children?: ReactNode;
-  contentText?: string;
-}
 
 const styles = StyleSheet.create({
   container: {

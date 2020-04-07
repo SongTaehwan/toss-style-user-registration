@@ -1,11 +1,7 @@
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import React from 'react';
+import { ContentContainerProps } from './types';
 import { layout } from '@styles';
-
-interface ContentContainerProps {
-  children: React.ReactNode;
-  style?: StyleProp<ViewStyle>;
-}
 
 const styles = StyleSheet.create({
   content: {
