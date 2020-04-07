@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Platform,
+} from 'react-native';
 import React from 'react';
 import { TypoConst, FontWeightConst } from '@styles/types';
 import { typo, colors } from '@styles';
@@ -8,6 +14,14 @@ const styles = StyleSheet.create({
   defaultContainerStyle: {
     width: '100%',
     paddingHorizontal: 24,
+    ...Platform.select({
+      ios: {
+        marginBottom: 0,
+      },
+      android: {
+        marginBottom: 30,
+      },
+    }),
   },
   defaultButtonStyle: {
     width: '100%',
@@ -29,6 +43,7 @@ const styles = StyleSheet.create({
   },
   square: {
     borderRadius: 0,
+    marginBottom: 0,
   },
 });
 
@@ -44,7 +59,12 @@ const BarButton = ({
   ...rest
 }: ButtonProps): JSX.Element => {
   return (
-    <View style={[styles.defaultContainerStyle, containerStyle]}>
+    <View
+      style={[
+        styles.defaultContainerStyle,
+        square && styles.square,
+        containerStyle,
+      ]}>
       <TouchableOpacity
         disabled={disabled}
         style={[

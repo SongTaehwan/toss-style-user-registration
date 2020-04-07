@@ -8,3 +8,4 @@ export { default as VSpace } from './VSpace';
 export { default as HSpace } from './HSpace';
 export { default as Hero } from './Hero';
 export { default as Text } from './Text';
+export { default as HorizontalView } from './HorizontalView';

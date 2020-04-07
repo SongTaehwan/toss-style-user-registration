@@ -1,11 +1,12 @@
 import { SafeAreaViewProps } from 'react-native-safe-area-context';
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 import {
   TouchableOpacityProps,
   TextStyle,
   StyleProp,
   ViewStyle,
   TextProps as RNTextProps,
+  FlexAlignType,
 } from 'react-native';
 
 export interface SpaceProp {
@@ -72,3 +73,20 @@ export interface TextProps extends RNTextProps {
   left?: boolean;
   color?: string;
 }
+
+type YAxiosFlexAlignType =
+  | 'flex-start'
+  | 'flex-end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly';
+
+export interface HorizontalViewProps {
+  children?: ReactNode;
+  style?: StyleProp<ViewStyle>;
+  horizontalAlign?: YAxiosFlexAlignType;
+  verticalAlign?: FlexAlignType;
+}
+
+export type HorizontalViewType = FC<HorizontalViewProps>;

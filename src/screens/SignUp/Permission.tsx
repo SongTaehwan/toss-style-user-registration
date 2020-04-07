@@ -9,10 +9,32 @@ import {
 } from '@components';
 import { colors } from '@styles';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
+import { useFocusEffect } from '@react-navigation/native';
+import { BackHandler, Alert } from 'react-native';
 
 type PermissionProps = NavigationProps<SignUpStackParamList, 'AccountCreation'>;
 
 const Permission = ({ navigation }: PermissionProps) => {
+  useFocusEffect(() => {
+    const onPressBack = () => {
+      Alert.alert(
+        '이대로 떠나실 건가요? 😭',
+        '멋진 서비스가 기다리고 있어요! 😎',
+        [{ text: '아니오', style: 'cancel' }],
+        {
+          cancelable: true,
+        },
+      );
+      return true;
+    };
+
+    BackHandler.addEventListener('hardwareBackPress', onPressBack);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', onPressBack);
+    };
+  });
+
   return (
     <ContentContainer>
       <Content>

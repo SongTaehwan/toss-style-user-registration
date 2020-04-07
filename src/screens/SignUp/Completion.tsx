@@ -3,6 +3,7 @@ import { StyleSheet, BackHandler } from 'react-native';
 import { ContentContainer, Content, BarButton, Hero, Text } from '@components';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
 import { colors } from '@styles';
+import { useFocusEffect } from '@react-navigation/native';
 
 type CompletionProps = NavigationProps<SignUpStackParamList, 'Completion'>;
 
@@ -13,6 +14,14 @@ const styles = StyleSheet.create({
 });
 
 const Completion = ({ navigation }: CompletionProps) => {
+  useFocusEffect(() => {
+    const onPressBack = () => true;
+    BackHandler.addEventListener('hardwareBackPress', onPressBack);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', onPressBack);
+    };
+  });
+
   return (
     <ContentContainer>
       <Content>
