@@ -2,6 +2,7 @@ export default {
   container: {
     flex: 1,
     backgroundColor: 'white',
+    width: '100%',
   },
   topless: {
     paddingTop: 0,

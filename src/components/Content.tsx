@@ -24,6 +24,7 @@ const Content = ({
   return (
     <View style={[styles.wrapper, containerStyle]}>
       <ScrollView
+        showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={[styles.contentStyle, contentContainerStyle]}>
         {children}

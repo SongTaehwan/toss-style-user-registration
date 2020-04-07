@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
+import { ContentContainer, Content, BarButton, Hero } from '@components';
 
 type AccountCreationProps = NavigationProps<
   SignUpStackParamList,
@@ -9,9 +9,15 @@ type AccountCreationProps = NavigationProps<
 
 const AccountCreation = ({ navigation }: AccountCreationProps): JSX.Element => {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <ContentContainer>
+      <Content>
+        <Hero contentText={'왓섭은 사용중인\n구독서비스를 모아서 📦'} />
+      </Content>
+      <BarButton
+        title="보내기"
+        onPress={(): void => navigation.navigate('MobileVerification')}
+      />
+    </ContentContainer>
   );
 };
 

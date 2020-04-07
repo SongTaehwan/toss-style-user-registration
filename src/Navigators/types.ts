@@ -18,6 +18,7 @@ export type SignUpStackParamList = {
   Permission: undefined;
   ServiceTerms: undefined;
   AccountCreation: undefined;
+  MobileVerification: undefined;
   Completion: undefined;
 };
 

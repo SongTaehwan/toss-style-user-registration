@@ -7,3 +7,4 @@ export { default as BarButton } from './BarButton';
 export { default as IconButton } from './IconButton';
 export { default as VSpace } from './VSpace';
 export { default as HSpace } from './HSpace';
+export { default as Hero } from './Hero';

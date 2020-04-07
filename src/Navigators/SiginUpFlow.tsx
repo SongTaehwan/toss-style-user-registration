@@ -4,37 +4,43 @@ import { SignUpStackParamList, SignUpFlowProps } from './types';
 import { SignUpConst } from './enums';
 import {
   Permission,
-  ServiceTerms,
-  Completion,
   AccountCreation,
+  ServiceTerms,
+  MobileVerification,
+  Completion,
 } from '@screens/signUp';
 import { Container } from '@components';
-import { layout } from '@styles';
 
 const SignUpStack = createStackNavigator<SignUpStackParamList>();
 
 const SignUpFlow = (props: SignUpFlowProps): JSX.Element => {
   return (
-    <Container topless>
+    <Container>
       <SignUpStack.Navigator initialRouteName={SignUpConst.Permission}>
         <SignUpStack.Screen
           name={SignUpConst.Permission}
           component={Permission}
-          options={layout.headerless}
+          options={{ headerShown: false }}
         />
         <SignUpStack.Screen
           name={SignUpConst.ServiceTerms}
           component={ServiceTerms}
-          options={layout.headerless}
+          options={{ headerShown: false }}
         />
         <SignUpStack.Screen
           name={SignUpConst.AccountCreation}
           component={AccountCreation}
+          options={{ headerShown: false }}
+        />
+        <SignUpStack.Screen
+          name={SignUpConst.MobileVerification}
+          component={MobileVerification}
+          options={{ headerShown: false }}
         />
         <SignUpStack.Screen
           name={SignUpConst.Completion}
           component={Completion}
-          options={layout.headerless}
+          options={{ headerShown: false, gestureEnabled: false }}
         />
       </SignUpStack.Navigator>
     </Container>

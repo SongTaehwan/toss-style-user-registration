@@ -7,7 +7,8 @@ import {
   StyleProp,
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { typo, TypoTypes } from '@styles';
+import { TypoConst } from '@styles/types';
+import { typo } from '@styles';
 
 interface TextButtonProps extends TouchableOpacityProps {
   text: string;
@@ -17,7 +18,7 @@ interface TextButtonProps extends TouchableOpacityProps {
 
 const styles = StyleSheet.create({
   textStyle: {
-    ...typo.getTextStyle(TypoTypes.large),
+    ...typo.getTextStyle(TypoConst.large),
     textDecorationLine: 'underline',
   },
 });

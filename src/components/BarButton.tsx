@@ -1,4 +1,5 @@
 import {
+  View,
   Text,
   TouchableOpacity,
   StyleProp,
@@ -8,17 +9,24 @@ import {
   ViewStyle,
 } from 'react-native';
 import React, { ReactNode } from 'react';
-import { TypoTypes } from '@styleTypes';
+import { TypoConst, FontWeightConst } from '@styles/types';
 import { typo, colors } from '@styles';
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
   children?: ReactNode;
+  containerStyle?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
   buttonStyle?: StyleProp<ViewStyle>;
+  disabled?: boolean;
+  square?: boolean;
 }
 
 const styles = StyleSheet.create({
+  defaultContainerStyle: {
+    width: '100%',
+    paddingHorizontal: 24,
+  },
   defaultButtonStyle: {
     width: '100%',
     paddingHorizontal: 24,
@@ -30,10 +38,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   defaultTitleStyle: typo.getTextStyle(
-    TypoTypes.subTitle,
-    '500',
+    TypoConst.subTitle,
+    FontWeightConst._500,
     colors.pallette.white,
   ),
+  disabledStyle: {
+    backgroundColor: colors.pallette.grey,
+  },
+  square: {
+    borderRadius: 0,
+  },
 });
 
 const BarButton = ({
@@ -42,17 +56,28 @@ const BarButton = ({
   titleStyle,
   buttonStyle,
   onPress,
+  containerStyle,
+  disabled,
+  square,
   ...rest
 }: ButtonProps): JSX.Element => {
   return (
-    <TouchableOpacity
-      style={[styles.defaultButtonStyle, buttonStyle]}
-      onPress={onPress}
-      {...rest}>
-      {children || (
-        <Text style={[styles.defaultTitleStyle, titleStyle]}>{title}</Text>
-      )}
-    </TouchableOpacity>
+    <View style={[styles.defaultContainerStyle, containerStyle]}>
+      <TouchableOpacity
+        disabled={disabled}
+        style={[
+          styles.defaultButtonStyle,
+          square && styles.square,
+          buttonStyle,
+          disabled && styles.disabledStyle,
+        ]}
+        onPress={onPress}
+        {...rest}>
+        {children || (
+          <Text style={[styles.defaultTitleStyle, titleStyle]}>{title}</Text>
+        )}
+      </TouchableOpacity>
+    </View>
   );
 };
 

@@ -29,8 +29,7 @@
       "@constant": ["src/constant/index.ts"],
       "@components": ["src/components/index.ts"],
       "@navigators": ["src/navigators/index.ts"],
-      "@navigators/*": ["src/navigators/*"],
-      "@styleTypes": ["src/styles/styleTypes.ts"]
+      "@navigators/*": ["src/navigators/*"]
     }
   },
   "exclude": [
