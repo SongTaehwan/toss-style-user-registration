@@ -1,5 +1,5 @@
 import { pallette } from './colors';
-import { TypoTypes, BasicTypo } from './styleTypes';
+import { TypoTypes, BasicTypo, FontWeight } from './styleTypes';
 import { TextStyle } from 'react-native';
 
 export const basicTypo: BasicTypo = {
@@ -24,12 +24,12 @@ export const basicTypo: BasicTypo = {
 export default {
   getTextStyle(
     type: TypoTypes,
-    bold: boolean = false,
+    fontWeight: FontWeight = 'normal',
     color: string = pallette.black,
   ): TextStyle {
     return {
       ...basicTypo[type],
-      fontWeight: bold ? 'bold' : '400',
+      fontWeight,
       color,
     };
   },

@@ -1,4 +1,9 @@
 export { default as ContentContainer } from './ContentContainer';
 export { default as Container } from './Container';
-export { default as BarButton } from './BarButton';
+export { default as Content } from './Content';
 export { default as Text } from './Text';
+export { default as TextButton } from './TextButton';
+export { default as BarButton } from './BarButton';
+export { default as IconButton } from './IconButton';
+export { default as VSpace } from './VSpace';
+export { default as HSpace } from './HSpace';

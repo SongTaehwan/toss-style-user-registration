@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, { ReactNode } from 'react';
 import { TypoTypes } from '@styleTypes';
-import { typo } from '@styles';
+import { typo, colors } from '@styles';
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
@@ -24,8 +24,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 18,
     borderRadius: 12,
+    backgroundColor: colors.pallette.blue,
+    alignItems: 'center',
+    height: 56,
+    justifyContent: 'center',
   },
-  defaultTitleStyle: typo.getTextStyle(TypoTypes.title, true),
+  defaultTitleStyle: typo.getTextStyle(
+    TypoTypes.subTitle,
+    '500',
+    colors.pallette.white,
+  ),
 });
 
 const BarButton = ({

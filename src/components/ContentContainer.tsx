@@ -1,45 +1,23 @@
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 import React from 'react';
 import { layout } from '@styles';
 
-interface ContentContainerProps {
+interface ContentProps {
   children: React.ReactNode;
-  containerStyle?: StyleProp<ViewStyle>;
-  contentContainerStyle?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
 }
 
 const styles = StyleSheet.create({
-  wrapper: layout.container,
-  contentStyle: {
-    flexGrow: 1,
+  content: {
+    ...layout.container,
+    alignItems: 'center',
+    paddingHorizontal: 40,
+    paddingTop: 40,
   },
 });
 
-const ContentContainer = ({
-  containerStyle,
-  contentContainerStyle,
-  children,
-}: ContentContainerProps): JSX.Element => {
-  const ContentContainerStyle = StyleSheet.flatten([
-    containerStyle,
-    styles.wrapper,
-  ]);
-
-  const scrollContentContainerStyle = StyleSheet.flatten([
-    contentContainerStyle,
-    styles.contentStyle,
-  ]);
-
-  return (
-    <View style={ContentContainerStyle}>
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={scrollContentContainerStyle}>
-        {children}
-      </ScrollView>
-    </View>
-  );
+const Content = ({ children, style }: ContentProps): JSX.Element => {
+  return <View style={[styles.content, style]}>{children}</View>;
 };
 
-export default ContentContainer;
+export default Content;

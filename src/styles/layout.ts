@@ -9,4 +9,8 @@ export default {
   bottomless: {
     paddingBottom: 0,
   },
+  headerless: {
+    title: '',
+    headerStyle: { shadowOffset: { height: 0, width: 0 } },
+  },
 };
