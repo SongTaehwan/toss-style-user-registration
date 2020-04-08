@@ -11,6 +11,7 @@ import {
   HorizontalView,
   Text,
   Picker,
+  ArrowBackButton,
 } from '@components';
 import {
   Platform,
@@ -18,6 +19,7 @@ import {
   LayoutAnimation,
   StyleSheet,
   Alert,
+  Keyboard,
 } from 'react-native';
 import { pallette } from '@styles/colors';
 import validator from 'validator';
@@ -160,6 +162,7 @@ const AccountCreation = ({
 
     if (phoneText.length === 13) {
       nextStep();
+      Keyboard.dismiss();
     }
 
     dispatch({ type: DispatchEvent.CHANGE_PHONE_NUMBER, payload: phoneText });
@@ -239,6 +242,7 @@ const AccountCreation = ({
   return (
     <ContentContainer>
       <Content>
+        <ArrowBackButton />
         <Hero contentText={title} />
         {step > 3 && (
           <>
@@ -260,6 +264,7 @@ const AccountCreation = ({
               onChangeText={onChangePhoneNumber}
               returnKeyType={'go'}
               onSubmitEditing={nextStep}
+              keyboardType={'phone-pad'}
             />
             <VSpace space={32} />
           </>
@@ -277,6 +282,7 @@ const AccountCreation = ({
                 label="주민등록번호"
                 onChangeText={onChangeSSN}
                 returnKeyType={'go'}
+                keyboardType={'decimal-pad'}
               />
               <Text
                 subTitle
@@ -292,6 +298,7 @@ const AccountCreation = ({
                 containerStyle={styles.ssnSecondInput}
                 onChangeText={onChangeSSNLast}
                 returnKeyType={'go'}
+                keyboardType={'decimal-pad'}
               />
               <Text
                 title
@@ -313,6 +320,7 @@ const AccountCreation = ({
           returnKeyType={'go'}
           onSubmitEditing={nextStep}
         />
+        <VSpace space={32} />
       </Content>
       <BarButton title="보내기" onPress={verificationCheck} />
     </ContentContainer>

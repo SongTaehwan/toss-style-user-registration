@@ -8,12 +8,14 @@ import {
   Hero,
   Input,
   Text,
+  ArrowBackButton,
 } from '@components';
 import useText from '@hooks/useText';
 import useTimer from '@hooks/useTimer';
 import { typo } from '@styles';
 import { TypoConst, FontWeightConst } from '@styles/types';
 import { pallette } from '@styles/colors';
+import ServerAPI from '@api/ServerAPI';
 
 type MobileVerificationProps = NavigationProps<
   SignUpStackParamList,
@@ -36,8 +38,10 @@ const styles = StyleSheet.create({
 
 const MobileVerification = ({
   navigation,
+  route,
 }: MobileVerificationProps): JSX.Element => {
-  const [code, setCode] = useText<string>('');
+  const { name, phoneNumber, SSN, marketingAgreement } = route.params;
+  const [code, setCode] = useText<string>('', { delayTime: 0 });
   const [isValidCode, setValidState] = useState(false);
   const [remainTime, trigger] = useTimer({
     startTime: 180,
@@ -63,7 +67,6 @@ const MobileVerification = ({
   };
 
   const validationCheck = async (codeInput: string): Promise<any> => {
-    // TODO: Post
     try {
       if (codeInput === '123456') {
         setValidState(true);
@@ -77,8 +80,15 @@ const MobileVerification = ({
   };
 
   const createUser = async (): Promise<any> => {
-    // TODO: Post
     try {
+      const user = {
+        name,
+        phoneNumber,
+        SSN,
+        marketingAgreement,
+      };
+
+      // Send User Createion Request
       goToCompletion();
     } catch (error) {}
   };
@@ -90,6 +100,7 @@ const MobileVerification = ({
   return (
     <ContentContainer>
       <Content>
+        <ArrowBackButton />
         <Hero contentText={'👆 여기 위로 오는\n인증번호를 입력해주세요'} />
         <Input
           value={code}

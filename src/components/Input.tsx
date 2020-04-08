@@ -6,6 +6,7 @@ import {
   Animated,
   StyleProp,
   ViewStyle,
+  Platform,
 } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { pallette } from '@styles/colors';
@@ -19,7 +20,7 @@ interface InputProps extends TextInputProps {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 18,
-    height: 56,
+    height: Platform.OS === 'ios' ? 56 : 63,
     width: '100%',
     paddingHorizontal: 24,
   },
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
 
 const Input = ({
   inputRef,
-  value = '',
+  value,
   label,
   inputStyle,
   containerStyle,
