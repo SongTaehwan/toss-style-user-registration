@@ -74,6 +74,7 @@ export interface TextProps extends RNTextProps {
   right?: boolean;
   left?: boolean;
   color?: string;
+  bold?: boolean;
 }
 
 export type TextType = FC<TextProps>;
@@ -99,6 +100,6 @@ export interface CheckboxProps extends TouchableOpacityProps {
   checked: boolean;
   containerStyle?: StyleProp<ViewStyle>;
   iconImageStyle?: StyleProp<ImageStyle>;
-  checkedIcon?: string;
-  unCheckedIcon?: string;
+  checkedIcon?: 'checked' | 'checked_large';
+  unCheckedIcon?: 'unChecked' | 'unChecked_large';
 }

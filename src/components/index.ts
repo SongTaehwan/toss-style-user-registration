@@ -11,3 +11,6 @@ export { default as Text } from './Text';
 export { default as HorizontalView } from './HorizontalView';
 export { default as Checkbox } from './Checkbox';
 export { default as CheckableListItem } from './CheckableListItem';
+export { default as PermissionListItem } from './PermissionListItem';
+export { default as Icon } from './Icon';
+export { default as Input } from './Input';

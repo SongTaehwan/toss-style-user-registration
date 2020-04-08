@@ -6,6 +6,7 @@ import {
   Hero,
   Text,
   VSpace,
+  PermissionListItem,
 } from '@components';
 import { colors } from '@styles';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
@@ -46,6 +47,16 @@ const Permission = ({ navigation }: PermissionProps) => {
           </Text>
         </Hero>
         <VSpace space={16} />
+        <PermissionListItem
+          title="휴대전화 인증"
+          subTitle="이후 오픈뱅킹을 통해 구독서비스 자동 연동을 위해 본인 인증을 진행합니다."
+        />
+        <VSpace space={24} />
+        <PermissionListItem
+          title="알림 설정"
+          subTitle="구독서비스가 결제되기 전, 미리 알림을 보내서 알려줍니다."
+          iconName="phone"
+        />
       </Content>
       <BarButton
         title="확인"

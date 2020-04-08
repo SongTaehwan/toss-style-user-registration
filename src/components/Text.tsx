@@ -15,6 +15,9 @@ const styles = StyleSheet.create({
   right: {
     textAlign: 'right',
   },
+  bold: {
+    fontWeight: 'bold',
+  },
 });
 
 const Text = ({
@@ -28,6 +31,7 @@ const Text = ({
   center,
   right,
   left,
+  bold,
   color,
   ...rest
 }: TextProps): JSX.Element => {
@@ -42,6 +46,7 @@ const Text = ({
         center && styles.center,
         left && styles.left,
         right && styles.right,
+        bold && styles.bold,
         style,
         !!color && { color },
       ]}
