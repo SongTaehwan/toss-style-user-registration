@@ -10,12 +10,17 @@ import {
 } from '@components';
 import { colors } from '@styles';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
-import { useFocusEffect } from '@react-navigation/native';
 import { BackHandler, Alert } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+import usePermission from '@hooks/usePermission';
 
 type PermissionProps = NavigationProps<SignUpStackParamList, 'AccountCreation'>;
 
 const Permission = ({ navigation }: PermissionProps) => {
+  const [, requestPermission] = usePermission({
+    onCompleted: goToServiceTerms,
+  });
+
   useFocusEffect(() => {
     const onPressBack = () => {
       Alert.alert(
@@ -35,6 +40,10 @@ const Permission = ({ navigation }: PermissionProps) => {
       BackHandler.removeEventListener('hardwareBackPress', onPressBack);
     };
   });
+
+  function goToServiceTerms(): void {
+    navigation.navigate('ServiceTerms');
+  }
 
   return (
     <ContentContainer>
@@ -58,10 +67,7 @@ const Permission = ({ navigation }: PermissionProps) => {
           iconName="phone"
         />
       </Content>
-      <BarButton
-        title="확인"
-        onPress={(): void => navigation.navigate('ServiceTerms')}
-      />
+      <BarButton title="확인" onPress={requestPermission} />
     </ContentContainer>
   );
 };

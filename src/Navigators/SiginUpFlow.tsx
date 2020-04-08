@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
-import { SignUpStackParamList, SignUpFlowProps } from './types';
+import React, { useEffect } from 'react';
+import { SignUpStackParamList } from './types';
 import { SignUpConst } from './enums';
 import {
   Permission,
@@ -10,18 +10,23 @@ import {
   Completion,
 } from '@screens/signUp';
 import { Container } from '@components';
+import usePermission from '@hooks/usePermission';
 
 const SignUpStack = createStackNavigator<SignUpStackParamList>();
 
-const SignUpFlow = (props: SignUpFlowProps): JSX.Element => {
+const SignUpFlow = (): JSX.Element => {
+  const [permissionGranted] = usePermission({});
+
   return (
     <Container>
       <SignUpStack.Navigator initialRouteName={SignUpConst.Permission}>
-        <SignUpStack.Screen
-          name={SignUpConst.Permission}
-          component={Permission}
-          options={{ headerShown: false }}
-        />
+        {!permissionGranted && (
+          <SignUpStack.Screen
+            name={SignUpConst.Permission}
+            component={Permission}
+            options={{ headerShown: false }}
+          />
+        )}
         <SignUpStack.Screen
           name={SignUpConst.ServiceTerms}
           component={ServiceTerms}

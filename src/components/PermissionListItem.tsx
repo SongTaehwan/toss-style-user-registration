@@ -6,9 +6,9 @@ import { pallette } from '@styles/colors';
 export interface PermissionListItem {
   title: string;
   subTitle: string;
-  iconName: 'bell' | 'phone';
-  contentStyle: StyleProp<ViewStyle>;
-  children: ReactNode;
+  iconName?: 'bell' | 'phone';
+  contentStyle?: StyleProp<ViewStyle>;
+  children?: ReactNode;
 }
 
 const styles = StyleSheet.create({
