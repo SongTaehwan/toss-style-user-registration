@@ -21,7 +21,7 @@ const Checkbox = ({
   containerStyle,
   iconImageStyle,
   checkedIcon = 'checked',
-  unCheckedIcon = 'unChecked',
+  unCheckedIcon = 'unchecked',
   ...rest
 }: CheckboxProps): JSX.Element => {
   return (

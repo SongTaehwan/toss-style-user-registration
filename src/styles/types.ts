@@ -1,12 +1,13 @@
 import { TextStyle } from 'react-native';
 
-export type TypoType = 'title' | 'subTitle' | 'large' | 'normal';
+export type TypoType = 'title' | 'subTitle' | 'large' | 'normal' | 'small';
 
 export enum TypoConst {
   title = 'title',
   subTitle = 'subTitle',
   large = 'large',
   normal = 'normal',
+  small = 'small',
 }
 
 export type FontWeightTypes =

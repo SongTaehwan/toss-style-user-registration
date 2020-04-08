@@ -51,7 +51,7 @@ const ServiceTerms = ({ navigation }: ServiceTerms) => {
           containerStyle={styles.largeListItemContainer}
           titleStyle={styles.largeFont}
           checkedIcon={'checked_large'}
-          unCheckedIcon={'unChecked_large'}
+          unCheckedIcon={'unchecked_large'}
           onPress={() => setOpen(!open)}
         />
         <CheckableListItem

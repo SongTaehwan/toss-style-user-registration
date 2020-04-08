@@ -19,6 +19,10 @@ export const basicTypo: BasicTypo = {
     fontSize: 14,
     lineHeight: 20,
   },
+  small: {
+    fontSize: 12,
+    lineHeight: 16,
+  },
 };
 
 export default {

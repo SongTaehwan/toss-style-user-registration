@@ -101,5 +101,5 @@ export interface CheckboxProps extends TouchableOpacityProps {
   containerStyle?: StyleProp<ViewStyle>;
   iconImageStyle?: StyleProp<ImageStyle>;
   checkedIcon?: 'checked' | 'checked_large';
-  unCheckedIcon?: 'unChecked' | 'unChecked_large';
+  unCheckedIcon?: 'unchecked' | 'unchecked_large';
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationProps, SignUpStackParamList } from '@navigators/types';
-import { ContentContainer, Content, BarButton, Hero } from '@components';
+import { ContentContainer, Content, BarButton, Hero, Input } from '@components';
 
 type AccountCreationProps = NavigationProps<
   SignUpStackParamList,
@@ -12,6 +12,7 @@ const AccountCreation = ({ navigation }: AccountCreationProps): JSX.Element => {
     <ContentContainer>
       <Content>
         <Hero contentText={'왓섭은 사용중인\n구독서비스를 모아서 📦'} />
+        <Input />
       </Content>
       <BarButton
         title="보내기"
