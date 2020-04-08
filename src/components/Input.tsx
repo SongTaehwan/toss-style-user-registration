@@ -27,16 +27,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingBottom: 12,
     fontSize: 16,
-    color: pallette.lightGrey,
+    color: pallette.grey,
     borderBottomWidth: 1,
-    borderBottomColor: pallette.lightGrey,
+    borderBottomColor: pallette.grey,
   },
   active: {
+    borderBottomWidth: 2,
     borderBottomColor: pallette.blue,
     color: pallette.black,
   },
   fontInActive: {
-    color: pallette.lightGrey,
+    color: pallette.grey,
   },
 });
 
@@ -76,7 +77,7 @@ const Input = ({
     }),
     color: focusAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [pallette.lightGrey, pallette.blue],
+      outputRange: [pallette.grey, pallette.blue],
     }),
   };
 

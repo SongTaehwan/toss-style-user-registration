@@ -42,6 +42,7 @@ enum TitleByStep {
   SSN = '차곡차곡 정리하고 📑',
   phoneNumber = '한번에 보여드립니다 📊',
   provider = '그러고보니 핸드폰 요금도\n정기지출인거 아시나요😯',
+  last = '입력해주신 번호로\n인증번호를 보냅니다 ✉️',
 }
 
 const initialState: State = {
@@ -83,7 +84,7 @@ const userReducer = (state = initialState, { type, payload }): State => {
         phoneNumber: payload,
       };
     case DispatchEvent.CHANGE_PROVIDER:
-      return { ...state, provider: payload };
+      return { ...state, provider: payload.provider, title: payload.title };
     default:
       return state;
   }
@@ -122,7 +123,7 @@ const AccountCreation = ({
   navigation,
   route,
 }: AccountCreationProps): JSX.Element => {
-  // const { marketingAgreement } = route.params;
+  const { marketingAgreement } = route.params;
   const [
     { title, step, name, SSN, SSNLast, provider, phoneNumber },
     dispatch,
@@ -173,6 +174,16 @@ const AccountCreation = ({
     dispatch({ type: DispatchEvent.CHANGE_SSN_LAST, payload: lastNumber });
   };
 
+  const onChangeProvider = (selectedProvider: string): void => {
+    dispatch({
+      type: DispatchEvent.CHANGE_PROVIDER,
+      payload: {
+        provider: selectedProvider,
+        title: TitleByStep.last,
+      },
+    });
+  };
+
   const goToMobileVerification = () => {
     navigation.navigate(SignUpConst.MobileVerification, {
       name,
@@ -202,8 +213,6 @@ const AccountCreation = ({
           type: DispatchEvent.CHANGE_STEP,
           payload: { step: 4, title: TitleByStep.provider },
         });
-      // case StepConst.provider:
-      //   return onChangeStep(StepConst.SSN);
     }
   };
 
@@ -233,13 +242,16 @@ const AccountCreation = ({
         <Hero contentText={title} />
         {step > 3 && (
           <>
-            <Input value={provider} label="통신사" editable={false} />
+            <Picker
+              value={provider}
+              label="통신사"
+              onSelect={onChangeProvider}
+            />
             <VSpace space={32} />
           </>
         )}
         {step > 2 && (
           <>
-            <Picker />
             <Input
               value={phoneNumber}
               autoFocus
@@ -265,7 +277,6 @@ const AccountCreation = ({
                 label="주민등록번호"
                 onChangeText={onChangeSSN}
                 returnKeyType={'go'}
-                onSubmitEditing={nextStep}
               />
               <Text
                 subTitle
