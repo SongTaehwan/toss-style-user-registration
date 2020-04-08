@@ -17,7 +17,9 @@ export type AppFlowParamList = {
 export type SignUpStackParamList = {
   Permission: undefined;
   ServiceTerms: undefined;
-  AccountCreation: undefined;
+  AccountCreation: {
+    marketing: boolean;
+  };
   MobileVerification: undefined;
   Completion: undefined;
 };

@@ -31,6 +31,7 @@ const CheckbaleListItem = ({
   checkboxContainerStyle,
   checkbox = true,
   checked,
+  onPressCheckbox,
   TextComponent,
   ...rest
 }: CheckbaleListItemProps): JSX.Element => {
@@ -53,6 +54,7 @@ const CheckbaleListItem = ({
             <Checkbox
               checked={checked}
               containerStyle={checkboxContainerStyle}
+              onPressCheckbox={onPressCheckbox}
               {...rest}
             />
           )}

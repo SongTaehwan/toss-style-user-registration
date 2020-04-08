@@ -1,5 +1,5 @@
 import { SafeAreaViewProps } from 'react-native-safe-area-context';
-import { ReactNode, FC } from 'react';
+import { ReactNode, FC, ReactText } from 'react';
 import {
   TouchableOpacityProps,
   TextStyle,
@@ -97,9 +97,11 @@ export interface HorizontalViewProps {
 export type HorizontalViewType = FC<HorizontalViewProps>;
 
 export interface CheckboxProps extends TouchableOpacityProps {
+  value?: string;
   checked: boolean;
   containerStyle?: StyleProp<ViewStyle>;
   iconImageStyle?: StyleProp<ImageStyle>;
   checkedIcon?: 'checked' | 'checked_large';
   unCheckedIcon?: 'unchecked' | 'unchecked_large';
+  onPressCheckbox?: (value: string, checked: boolean) => void;
 }

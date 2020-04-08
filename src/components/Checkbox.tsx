@@ -17,16 +17,25 @@ const styles = StyleSheet.create({
 });
 
 const Checkbox = ({
+  value,
   checked = false,
   containerStyle,
   iconImageStyle,
   checkedIcon = 'checked',
   unCheckedIcon = 'unchecked',
+  onPressCheckbox,
   ...rest
 }: CheckboxProps): JSX.Element => {
+  const handler = () => {
+    if (onPressCheckbox) {
+      onPressCheckbox(value || '', checked);
+    }
+  };
+
   return (
     <TouchableOpacity
       style={[styles.defaultContainer, containerStyle]}
+      onPress={handler}
       {...rest}>
       <Image
         style={[styles.defaultImage, iconImageStyle]}
