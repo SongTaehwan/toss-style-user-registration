@@ -10,7 +10,6 @@ import {
   Completion,
 } from '@screens/signUp';
 import { Container } from '@components';
-import { BackHandler } from 'react-native';
 
 const SignUpStack = createStackNavigator<SignUpStackParamList>();
 

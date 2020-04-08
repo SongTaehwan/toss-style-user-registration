@@ -194,7 +194,6 @@
 				A5D27946124C5949E462B047 /* Pods-whatssub-whatssubTests.debug.xcconfig */,
 				B8A087AD0C976A32A524CA1B /* Pods-whatssub-whatssubTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

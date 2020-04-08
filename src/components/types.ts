@@ -7,6 +7,7 @@ import {
   ViewStyle,
   TextProps as RNTextProps,
   FlexAlignType,
+  ImageStyle,
 } from 'react-native';
 
 export interface SpaceProp {
@@ -14,9 +15,10 @@ export interface SpaceProp {
 }
 
 export interface TextButtonProps extends TouchableOpacityProps {
-  text: string;
+  title: string;
   textStyle?: StyleProp<TextStyle>;
-  children: ReactNode;
+  children?: ReactNode;
+  containerStyle?: StyleProp<ViewStyle>;
 }
 
 export interface ButtonProps extends TouchableOpacityProps {
@@ -74,6 +76,8 @@ export interface TextProps extends RNTextProps {
   color?: string;
 }
 
+export type TextType = FC<TextProps>;
+
 type YAxiosFlexAlignType =
   | 'flex-start'
   | 'flex-end'
@@ -90,3 +94,11 @@ export interface HorizontalViewProps {
 }
 
 export type HorizontalViewType = FC<HorizontalViewProps>;
+
+export interface CheckboxProps extends TouchableOpacityProps {
+  checked: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
+  iconImageStyle?: StyleProp<ImageStyle>;
+  checkedIcon?: string;
+  unCheckedIcon?: string;
+}

@@ -12,6 +12,7 @@ module.exports = {
           '@constant': './src/constant',
           '@screens': './src/screens',
           '@context': './src/context',
+          '@assets': './src/assets',
           '@styles': './src/styles',
           '@hooks': './src/hooks',
           '@util': './src/util',

@@ -1,6 +1,6 @@
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Text, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { FC } from 'react';
 import { TypoConst } from '@styles/types';
 import { TextButtonProps } from './types';
 import { typo } from '@styles';
@@ -12,17 +12,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const TextButton = ({
-  text = 'buttonText',
+const TextButton: FC<TextButtonProps> = ({
+  title = 'buttonText',
   textStyle,
   children,
+  containerStyle,
   ...props
 }: TextButtonProps): JSX.Element => {
   const buttonTextStyle = StyleSheet.flatten([styles.textStyle, textStyle]);
 
   return (
-    <TouchableOpacity {...props}>
-      {children || <Text style={buttonTextStyle}>{text}</Text>}
+    <TouchableOpacity {...props} containerStyle={containerStyle}>
+      {children || <Text style={buttonTextStyle}>{title}</Text>}
     </TouchableOpacity>
   );
 };
