@@ -1,10 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, TextInputProps, StyleSheet, Animated } from 'react-native';
+import {
+  View,
+  TextInputProps,
+  StyleSheet,
+  Animated,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { pallette } from '@styles/colors';
 
 interface InputProps extends TextInputProps {
-  label: string;
+  label?: string;
+  inputStyle?: StyleProp<ViewStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
 }
 
 const styles = StyleSheet.create({
@@ -31,7 +40,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const Input = ({ value = '', label, ...rest }: InputProps): JSX.Element => {
+const Input = ({
+  inputRef,
+  value = '',
+  label,
+  inputStyle,
+  containerStyle,
+  ...rest
+}: InputProps): JSX.Element => {
   const focusAnimation = useRef(new Animated.Value(value === '' ? 0 : 1))
     .current;
   const [isFocused, setFocus] = useState(false);
@@ -65,7 +81,7 @@ const Input = ({ value = '', label, ...rest }: InputProps): JSX.Element => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       {label && (
         <Animated.Text
           style={[
@@ -76,8 +92,10 @@ const Input = ({ value = '', label, ...rest }: InputProps): JSX.Element => {
         </Animated.Text>
       )}
       <TextInput
+        ref={inputRef}
+        value={value}
         selectionColor={'black'}
-        style={[styles.defaultInput, isFocused && styles.active]}
+        style={[styles.defaultInput, isFocused && styles.active, inputStyle]}
         onFocus={handleOnFocus}
         onBlur={handleOnBlur}
         {...rest}

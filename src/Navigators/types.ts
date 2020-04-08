@@ -18,9 +18,15 @@ export type SignUpStackParamList = {
   Permission: undefined;
   ServiceTerms: undefined;
   AccountCreation: {
-    marketing: boolean;
+    marketingAgreement: boolean;
   };
-  MobileVerification: undefined;
+  MobileVerification: {
+    name: string;
+    SSN: string;
+    provider: string;
+    phoneNumber: string;
+    marketingAgreement: boolean;
+  };
   Completion: undefined;
 };
 

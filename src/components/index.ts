@@ -14,3 +14,5 @@ export { default as CheckableListItem } from './CheckableListItem';
 export { default as PermissionListItem } from './PermissionListItem';
 export { default as Icon } from './Icon';
 export { default as Input } from './Input';
+export { default as Picker } from './Picker';
+export { default as BottomSheet } from './BottomSheet';

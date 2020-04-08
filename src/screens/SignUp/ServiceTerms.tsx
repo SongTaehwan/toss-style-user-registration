@@ -82,7 +82,7 @@ const ServiceTerms = ({ navigation }: ServiceTerms) => {
 
   const goToAccountCreation = () => {
     navigation.navigate(SignUpConst.AccountCreation, {
-      marketing: checkList.marketing,
+      marketingAgreement: checkList.marketing,
     });
   };
 

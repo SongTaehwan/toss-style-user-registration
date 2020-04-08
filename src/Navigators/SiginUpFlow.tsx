@@ -19,7 +19,7 @@ const SignUpFlow = (): JSX.Element => {
 
   return (
     <Container>
-      <SignUpStack.Navigator initialRouteName={SignUpConst.Permission}>
+      <SignUpStack.Navigator initialRouteName={SignUpConst.AccountCreation}>
         {!permissionGranted && (
           <SignUpStack.Screen
             name={SignUpConst.Permission}

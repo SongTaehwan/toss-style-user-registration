@@ -70,6 +70,7 @@ export interface TextProps extends RNTextProps {
   subTitle?: boolean;
   large?: boolean;
   normal?: boolean;
+  small?: boolean;
   center?: boolean;
   right?: boolean;
   left?: boolean;
