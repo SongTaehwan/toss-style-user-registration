@@ -1,17 +1,7 @@
-import { StyleSheet, StyleProp, TextStyle, ViewStyle } from 'react-native';
-import React, { ReactNode } from 'react';
+import { StyleSheet } from 'react-native';
+import React from 'react';
 import { HorizontalView, Checkbox, Text } from '@components';
-import { CheckboxProps } from './types';
-
-interface CheckbaleListItemProps extends CheckboxProps {
-  children?: ReactNode;
-  title?: string;
-  titleStyle?: StyleProp<TextStyle>;
-  checkbox?: boolean;
-  containerStyle?: StyleProp<ViewStyle>;
-  checkboxContainerStyle?: StyleProp<ViewStyle>;
-  TextComponent?: React.ReactNode;
-}
+import { CheckableListItemProps } from './types';
 
 const styles = StyleSheet.create({
   defaultContainer: {
@@ -34,7 +24,7 @@ const CheckbaleListItem = ({
   onPressCheckbox,
   TextComponent,
   ...rest
-}: CheckbaleListItemProps): JSX.Element => {
+}: CheckableListItemProps): JSX.Element => {
   return (
     <HorizontalView
       style={[styles.defaultContainer, containerStyle]}

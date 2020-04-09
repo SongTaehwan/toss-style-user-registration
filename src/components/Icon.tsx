@@ -1,18 +1,6 @@
+import { View, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import {
-  View,
-  Image,
-  StyleSheet,
-  ImageProps,
-  StyleProp,
-  ViewStyle,
-  ImageStyle,
-} from 'react-native';
-
-export interface IconProps extends ImageProps {
-  containerStyle?: StyleProp<ViewStyle>;
-  iconStyle?: StyleProp<ImageStyle>;
-}
+import { IconProps } from './types';
 
 const styles = StyleSheet.create({
   containerStye: {

@@ -1,16 +1,10 @@
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, PickerProps } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 import { Text } from '@components';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { pallette } from '@styles/colors';
 import BottomSheet from './BottomSheet';
-import Icon from 'react-native-vector-icons/AntDesign';
-
-interface PickerProps {
-  label?: string;
-  value?: string;
-  autoFocus?: boolean;
-}
 
 const styles = StyleSheet.create({
   container: {

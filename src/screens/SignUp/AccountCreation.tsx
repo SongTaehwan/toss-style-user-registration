@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   ssnRightLabel: {
     flex: 0.4,
     paddingBottom: 6,
+    height: 40,
   },
   inactive: {
     color: pallette.lightGrey,
@@ -273,7 +274,7 @@ const AccountCreation = ({
           <>
             <HorizontalView
               style={styles.ssnContainer}
-              verticalAlign={'center'}>
+              verticalAlign={Platform.OS === 'ios' ? 'center' : 'flex-end'}>
               <Input
                 containerStyle={styles.ssnInput}
                 value={SSN}

@@ -1,15 +1,8 @@
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import React, { ReactNode } from 'react';
+import { View, StyleSheet } from 'react-native';
+import React from 'react';
 import { HorizontalView, Text, Icon, HSpace, VSpace } from '@components';
+import { PermissionListItem } from './types';
 import { pallette } from '@styles/colors';
-
-export interface PermissionListItem {
-  title: string;
-  subTitle: string;
-  iconName?: 'bell' | 'phone';
-  contentStyle?: StyleProp<ViewStyle>;
-  children?: ReactNode;
-}
 
 const styles = StyleSheet.create({
   containerStyle: {

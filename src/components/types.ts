@@ -1,5 +1,5 @@
 import { SafeAreaViewProps } from 'react-native-safe-area-context';
-import { ReactNode, FC, ReactText } from 'react';
+import { ReactNode, FC } from 'react';
 import {
   TouchableOpacityProps,
   TextStyle,
@@ -8,6 +8,8 @@ import {
   TextProps as RNTextProps,
   FlexAlignType,
   ImageStyle,
+  ModalProps,
+  ImageProps,
 } from 'react-native';
 
 export interface SpaceProp {
@@ -105,4 +107,40 @@ export interface CheckboxProps extends TouchableOpacityProps {
   checkedIcon?: 'checked' | 'checked_large';
   unCheckedIcon?: 'unchecked' | 'unchecked_large';
   onPressCheckbox?: (value: string, checked: boolean) => void;
+}
+
+export interface BottomSheetProps extends ModalProps {
+  isVisible: boolean;
+  modalStyle?: StyleProp<ViewStyle>;
+  close?: () => void;
+  onPress?: (provider: string) => void;
+}
+
+export interface CheckableListItemProps extends CheckboxProps {
+  children?: ReactNode;
+  title?: string;
+  titleStyle?: StyleProp<TextStyle>;
+  checkbox?: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
+  checkboxContainerStyle?: StyleProp<ViewStyle>;
+  TextComponent?: React.ReactNode;
+}
+
+export interface IconProps extends ImageProps {
+  containerStyle?: StyleProp<ViewStyle>;
+  iconStyle?: StyleProp<ImageStyle>;
+}
+
+export interface PermissionListItem {
+  title: string;
+  subTitle: string;
+  iconName?: 'bell' | 'phone';
+  contentStyle?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+}
+
+export interface PickerProps {
+  label?: string;
+  value?: string;
+  autoFocus?: boolean;
 }

@@ -70,7 +70,7 @@ const Input = ({
     left: 32,
     top: focusAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [18, 0],
+      outputRange: [Platform.OS === 'ios' ? 18 : 30, 0],
     }),
     fontSize: focusAnimation.interpolate({
       inputRange: [0, 1],

@@ -1,3 +1,4 @@
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import {
   View,
@@ -8,19 +9,11 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import Modal from 'react-native-modal';
-import Content from './Content';
 import Hero from './Hero';
 import { Icon, Text } from '@components';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import HSpace from './HSpace';
 import { pallette } from '@styles/colors';
-
-interface BottomSheetProps extends ModalProps {
-  isVisible: boolean;
-  modalStyle?: StyleProp<ViewStyle>;
-  close?: () => void;
-  onPress?: (provider: string) => void;
-}
+import { BottomSheetProps } from './types';
 
 const styles = StyleSheet.create({
   defaultModal: {
