@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import React from 'react';
 import { HorizontalView, Text, Icon, HSpace, VSpace } from '@components';
-import { PermissionListItem } from './types';
+import { PermissionListItemType } from './types';
 import { pallette } from '@styles/colors';
 
 const styles = StyleSheet.create({

@@ -131,7 +131,7 @@ export interface IconProps extends ImageProps {
   iconStyle?: StyleProp<ImageStyle>;
 }
 
-export interface PermissionListItem {
+export interface PermissionListItemType {
   title: string;
   subTitle: string;
   iconName?: 'bell' | 'phone';
