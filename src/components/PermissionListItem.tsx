@@ -20,7 +20,7 @@ const PermissionListItem = ({
   subTitle,
   contentStyle,
   children,
-}: PermissionListItem): JSX.Element => {
+}: PermissionListItemType): JSX.Element => {
   return (
     <HorizontalView style={styles.containerStyle}>
       {children || (
